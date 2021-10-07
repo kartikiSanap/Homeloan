@@ -1,0 +1,48 @@
+<!--body>
+    <div class="container">
+        <form ngaction="/action_page.php">
+            <h1 style="color:#00395d">Repayment Schedule Details</h1>
+            <h1></h1>
+            <label for="month_year">Month Year:{{month_year}}</label>
+            <input type="text" id="acc_no" name="acc_no"><br><br>
+        
+            <label for="emi">EMI:{{emi}}</label>
+            <input type="text" id="loan_id" name="loan_id"><br><br>
+        
+            <label for="principal_component">Principal Component:{{principal_component}}</label>
+            <input type="text" id="total_loan" name="total_loan"><br><br>
+        
+            <label for="interest">Interest Component :{{interest_component}}</label>
+            <input type="text" id="interest" name="interest"><br><br>
+           
+            <label for="principal outstanding">Principal Outstanding:{{principal_outstanding}}</label>
+            <input type="text" id="tenure" name="tenure"><br><br>
+        
+            <label for="payment status">Payment Status:{{payment_status}}</label>
+            <input type="text" id="status" name="status"><br><br>>
+            
+        
+          </form>
+    </div>
+</body-->
+<table class="table table-hover" >
+    <tr>
+        <th>Month Year</th>
+        <th>EMI</th>
+        <th>Principal Component</th>
+        <th>Interest Component</th>
+        <th>Principal Outstanding</th>
+        <th>Payment Status</th>
+        </tr>
+    
+    <tr *ngFor="let repayment of repayment_schedules">
+      
+        <td> {{repayment.month_year}} </td>
+        <td> {{repayment.emi}} </td>
+        <td> {{repayment.principal_component}} </td>
+        <td> {{repayment.interest_component}} </td>
+        <td> {{repayment.principal_outstanding}} </td>
+        <td> {{repayment.payment_status}} </td>
+        
+    </tr>
+</table>

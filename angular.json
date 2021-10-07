@@ -25,11 +25,17 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
+        
+            
+              
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js"
+
+            ]
           },
           "configurations": {
             "production": {
@@ -91,7 +97,8 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/image"
             ],
             "styles": [
               "src/styles.css"

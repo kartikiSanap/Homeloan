@@ -1,6 +1,14 @@
+import { RepaymentComponent } from './home-page/repayment/repayment.component';
+import { PrepaymentComponent } from './home-page/prepayment/prepayment.component';
+import { LoanDetailsComponent } from './home-page/loan-details/loan-details.component';
+import { ApplyLoanComponent } from './home-page/apply-loan/apply-loan.component';
+import { HomePageComponent } from './home-page/home-page.component';
+
+import { LoginPageComponent } from './login-page/login-page.component';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { SavingAccountComponent } from './home-page/saving-account/saving-account.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -9,7 +17,15 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        LoginPageComponent,
+        HomePageComponent, 
+        ApplyLoanComponent,
+        LoanDetailsComponent,
+        PrepaymentComponent,
+        RepaymentComponent,
+        SavingAccountComponent
+        
       ],
     }).compileComponents();
   });
