@@ -1,0 +1,58 @@
+<div class="container">
+    <form #applyloan ="ngForm" (ngSubmit)="onClickSubmit(applyloan.value)">
+      
+
+      <div class="row">
+        <div class="col-25">
+          <label for="sal">Salary</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="sal" name="sal" placeholder="Your salary" required ngModel>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="lamount">Loan Amount</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lamount" name="lamount" placeholder="Loan Amount" required ngModel>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="tenure">Loan Tenure</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="tenure" name="tenure" placeholder="Tenure" required ngModel>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="address">Property Address</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="address" name="address" placeholder="Address of the property" ngModel>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="img">Property Image</label>
+        </div>
+        <div class="col-75">
+          <input type="file" id="img" name="img" accept="image/*" ngModel>
+        </div>
+      </div>
+      
+
+
+      
+      
+      <div class="row">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>

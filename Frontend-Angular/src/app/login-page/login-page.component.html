@@ -1,0 +1,23 @@
+ <div class="imgcontainer">
+  <img src="assets/image/icon.jpg" alt="Avatar" class="avatar">
+</div>
+<div class="login">
+<div class="container">
+  <form #userlogin = "ngForm"   (ngSubmit)= "onClickSubmit(userlogin.value)">
+  <label for="uname"><b>Username</b></label>
+  <input type="text" placeholder="Enter Username" name="uname"  required ngModel>
+
+  <label for="psw"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" name="psw" required ngModel>
+      
+  <input type="submit" class=""value="submit">
+ </form>
+  
+</div>
+  <!--div [hidden]="value">Invalid Credentials</div-->
+
+
+</div>
+
+
+  
