@@ -31,7 +31,6 @@ export class SavingAccountComponent implements OnInit {
 
   }
 
-
   ngOnInit(): void {
     this.username=sessionStorage.getItem('user');
     this.http.post<SavingsAccount>("http://localhost:8080/Home/Saving",{username:this.username}).subscribe((data:SavingsAccount)=>
@@ -43,9 +42,7 @@ export class SavingAccountComponent implements OnInit {
         this.name=data.name;
     })
     
-     
-
-  }
+}
   
   
    
