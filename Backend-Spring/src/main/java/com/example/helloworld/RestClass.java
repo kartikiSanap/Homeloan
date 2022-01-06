@@ -35,7 +35,7 @@ DataSource datasource;
 @RequestMapping(value="Home/Login",method=RequestMethod.POST,produces= {"application/json"})
 public Login fun(@RequestBody Map<String, Object> payload) throws Exception
 {
-
+//this function returns an object. 
 String user = (String) payload.get("username");
 String pass = (String) payload.get("password");
 
