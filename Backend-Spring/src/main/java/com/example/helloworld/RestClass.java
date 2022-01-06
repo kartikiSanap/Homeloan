@@ -33,17 +33,17 @@ DataSource datasource;
 
 
 @RequestMapping(value="Home/Login",method=RequestMethod.POST,produces= {"application/json"})
-public Login fun(@RequestBody Map<String, Object> payload) throws Exception
+public Map<String,Object> fun(@RequestBody Map<String, Object> payload) throws Exception
 {
 //this function returns an object. 
 String user = (String) payload.get("username");
 String pass = (String) payload.get("password");
-
+Map<String,Object> m = new HashMap<>();
 System.out.println("user");
 String status="";
 String res="";
 String sql = "select password from users where username like '%"+user+"%';";
-Login login = new Login();
+//Login login = new Login();
 System.out.println(sql);
 try {
 Connection con = datasource.getConnection();
@@ -54,14 +54,16 @@ if(rst.next()) {
            if(res.equals(pass))
            {
     System.out.println("pass");
-    login.setResult("success");
-    
+    //login.setResult("success");
+    m.put("result","success");
+
         
 
            }
            else
            {
-        	   login.setResult("fail");
+        	   //login.setResult("fail");
+               m.put("result","failure");
         	 
         	   
            }
@@ -70,7 +72,8 @@ if(rst.next()) {
 
 con.close();
 con = null;
-return login;
+//return login;
+return m;
 }
 
 catch(Exception e)
@@ -352,11 +355,13 @@ return list;
 }
 
 @PostMapping("Home/Loan/ApplyLoan")
-public ApplyLoanAccount applyloan(@RequestBody Map<String,Object> applyloan) throws Exception
+public Map<String,Object> applyloan(@RequestBody Map<String,Object> applyloan) throws Exception
 {
 String username= (String)applyloan.get("username");
 String sql= "select * from savings_accounts where email like '"+username+"%'";
-ApplyLoanAccount a= new ApplyLoanAccount();
+//ApplyLoanAccount a= new ApplyLoanAccount();
+Map<String,Object> m = new HashMap<String,Object>();
+
 try
 {
 Connection conn=datasource.getConnection();
@@ -375,7 +380,8 @@ bal = rs.getInt("balance");
 if(exist) {
 
 	System.out.println("loan_already exist");
-   a.setResult("Loan Already Exists");
+   //a.setResult("Loan Already Exists");
+   m.put("result","loan_already_exist");
    return a;
 }
 //int account_no = Integer.parseInt((String) applyloan.get("account_no"));
@@ -409,7 +415,9 @@ conn=datasource.getConnection();
 
 ps=conn.prepareStatement(sql);
 ps.execute();
-a.setResult("Loan Approved");
+//a.setResult("Loan Approved");
+m.put("result","Loan Approved");
+
 conn = null;
 sql="update savings_accounts set balance ="+(bal+loan_amount)+"where account_no = "+account_no+";";
 conn=datasource.getConnection();
@@ -445,7 +453,8 @@ System.out.println(sql);
 }
 else
 {
-a.setResult("Loan Not Approved");
+//a.setResult("Loan Not Approved");
+m.put("result","loan not Appoved");
 }
 }
 catch(Exception e)
