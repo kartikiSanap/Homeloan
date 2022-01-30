@@ -83,7 +83,7 @@ throw new Exception(e);
 
 }
 
-@PostMapping("Home/Loan")//get loan table entries using account
+@PostMapping("Home/Loan")//get loan table records using account
 public  Loan_accounts getLoan(@RequestBody Map<String, Object> payload) throws Exception
 {
 String user = (String) payload.get("username");
