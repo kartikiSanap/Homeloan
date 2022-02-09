@@ -19,7 +19,7 @@ import { Injectable } from '@angular/core';
 export class SavingAccountComponent implements OnInit {
   
 
-  account_no: any; 
+      account_no: any; 
       name: any; 
       balance: any; 
       email: any; 
