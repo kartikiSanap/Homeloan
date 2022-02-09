@@ -17,7 +17,7 @@ import {RepaymentSchedule} from './repayment-schedule';
 import {Login} from './login';
 import {Applyloan} from './applyloan';
 import {LoanAccounts} from './loan-accounts';
-
+import { AuthService } from './auth.service'; 
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import {LoanAccounts} from './loan-accounts';
     FormsModule,
     HttpClientModule
   ],
-  providers: [SavingsAccount,RepaymentSchedule,Login,Applyloan,LoanAccounts],
+  providers: [SavingsAccount,RepaymentSchedule,Login,Applyloan,LoanAccounts,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

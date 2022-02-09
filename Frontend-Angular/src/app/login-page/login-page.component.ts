@@ -22,8 +22,10 @@ export class LoginPageComponent implements OnInit {
   response:any;
   result:any;
   value:any;
+  values:any;
   
   constructor(private http : HttpClient,private router:Router,private route: ActivatedRoute,private login: Login ) {
+
     
    }
 
@@ -33,11 +35,11 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
     this.value=true;
   }
- 
-  onClickSubmit(formdata:any)
+
+  
+ onClickSubmit(formdata:any)
   {
    
-    
     
      this.username=formdata.uname;
      this.password=formdata.psw;
