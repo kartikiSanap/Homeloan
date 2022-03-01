@@ -39,12 +39,13 @@ public Map<String,Object> fun(@RequestBody Map<String, Object> payload) throws E
 String user = (String) payload.get("username");
 String pass = (String) payload.get("password");
 Map<String,Object> m = new HashMap<>();
-System.out.println("user");
+//System.out.println("user");
 String status="";
 String res="";
 String sql = "select password from users where username like '%"+user+"%';";
 //Login login = new Login();
 System.out.println(sql);
+System.out.println(user+pass);
 try {
 Connection con = datasource.getConnection();
 PreparedStatement ps = con.prepareStatement(sql);
